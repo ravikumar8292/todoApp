@@ -17,13 +17,13 @@ const TodoItem = ({ todo, deleteTodo, toggleTodo, editTodo }) => {
   return (
     <>
         <li
-          className={`flex justify-between items-center w-[308px] h-[40px] px-1 border border-2`}
+          className={`flex justify-between items-center w-[308px] px-1 border border-2`}
         >
           <input
             type="checkbox"
             checked={todo.completed}
             onChange={() => toggleTodo(todo.id)}
-            className="h-4 w-4"
+            className=""
           />
 
           {isEditing ? (
@@ -32,12 +32,13 @@ const TodoItem = ({ todo, deleteTodo, toggleTodo, editTodo }) => {
                 type="text"
                 value={newText}
                 onChange={(e) => setNewText(e.target.value)}
+                className="py-3"
               />
               <button onClick={handlesave} className="bg-[#059862] text-white px-1 rounded text-lg">save</button>
             </>
           ) : (
             <>
-              <p className={`break-words overflow-hidden mx-3 ${todo.completed && 'line-through'}`}>{todo.inputValue}</p>
+              <p className={`break-words overflow-hidden mx-3 py-3 ${todo.completed && 'line-through'}`}>{todo.inputValue}</p>
               <div className="flex items-center">
                 <button onClick={handleedit}>✏️</button>
                 <button type="button" onClick={() => onDelete(todo.id)}>
