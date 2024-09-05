@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const TodoItem = ({ todo, deleteTodo, toggleTodo, editTodo }) => {
+  
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(todo.inputValue);
 
