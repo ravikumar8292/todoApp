@@ -31,7 +31,6 @@ const TodoForm = ({addTodo}) => {
             </button>
           </form>
         </div>
-        {/* <p className="text-center m-3">you typed: {inputValue}</p> */}
       </div>
     </div>
   );
